@@ -7,7 +7,173 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+nav {
+  padding: 0 1rem;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.container {
+  width: 90%;
+}
+.content {
+  padding: 1rem 0;
+}
+
+.goods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.page-footer {
+  padding-top: 0;
+}
+
+/*---------- Карточка товара ----------*/
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+.card-image {
+  height: 280px;
+  padding: 0.5rem;
+}
+.card-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+.card-content {
+  flex-grow: 1;
+}
+.card .card-content .card-title {
+  margin-bottom: 1rem;
+  font-weight: 400;
+  font-size: 18px;
+}
+.card-action button {
+  color: #000;
+}
+.card-action span {
+  font-size: 20px;
+}
+
+/*---------- Корзина ----------*/
+
+.cart {
+  position: fixed;
+  z-index: 10;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  right: 1rem;
+  bottom: 4rem;
+}
+.basket-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: #fff;
+  width: 50rem;
+  max-width: 95%;
+  box-shadow:
+      inset -1px 3px 8px 5px #e2e48d,
+      2px 5px 16px 0px #9b9145,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+  animation: show 500ms;
+  border-radius: 0.5rem;
+}
+.secondary-content {
+  cursor: pointer;
+}
+.basket-list .collection-item {
+  padding-right: 0.5rem;
+}
+.basket-item {
+  display: flex;
+  align-items: center;
+}
+.item-price {
+  text-wrap: nowrap;
+}
+.basket-item .secondary-content {
+  padding-right: 1.5rem;
+  margin-left: auto;
+}
+.text-big {
+  font-size: 17px;
+}
+.item-action {
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+/*---------- Анимация ----------*/
+
+@keyframes show {
+  from {
+    top: 70%;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+
+@keyframes toastAnimate {
+  from {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+}
+
+/*---------- Подсказка ----------*/
+
+.toast-container {
+  position: fixed;
+  bottom: 11rem;
+  right: 1rem;
+  max-width: 50%;
+  z-index: 20;
+  animation: toastAnimate 500ms;
+}
+.toast {
+  border-radius: 0.5rem;
+  opacity: 0.9;
+}
+
+/*---------- Media ----------*/
+
+@media (min-width: 767px) {
+  .cart {
+    top: 5.5rem;
+    bottom: unset;  /* восстанавливает значение по умолчанию */
+  }
+  .toast-container {
+    top: 7rem;
+    bottom: unset;
+  }
 }
