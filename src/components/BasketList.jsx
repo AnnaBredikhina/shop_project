@@ -30,7 +30,7 @@ function BasketList(props) {
                 />
             )) : <li className="collection-item">Cart is empty</li>
         }
-        <li className="collection-item active purple lighten-4 black-text text-big">Total price: {totalPrice} $</li>
+        <li className="collection-item active purple lighten-4 black-text text-big">Total price: {totalPrice.toFixed(2)} $</li>
         <li className="collection-item">
             <button className="btn waves-effect waves-light purple lighten-2 black-text">Order</button>
         </li>

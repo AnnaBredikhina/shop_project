@@ -14,7 +14,7 @@ function BasketItem(props) {
         <i class="material-icons purple-text item-action" onClick={() => removeQuantity(id)}>remove</i>
         x{quantity}
         <i class="material-icons purple-text item-action" onClick={() => addQuantity(id)}>add</i>
-        <span className="item-price">= {price * quantity}</span> $
+        <span className="item-price">= {(price * quantity).toFixed(2)}</span> $
 
         <span class="secondary-content" onClick={() => removeFromBasket(id)}>
             <i class="material-icons purple-text">close</i>
