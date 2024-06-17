@@ -1,8 +1,8 @@
 {
-  "name": "shop_project",
+  "name": "shop_pro_refact",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AnnaBredikhina.github.io/shop_project",
+  "homepage": "https://AnnaBredikhina.github.io/shop_pro_refact",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

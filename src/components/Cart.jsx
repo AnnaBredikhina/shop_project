@@ -1,5 +1,10 @@
-function Cart(props) {
-    const { quantity = 0, handleBasketShow = Function.prototype } = props;
+import { useContext } from "react";
+import { ShopContext } from "../context";
+
+function Cart() {
+    const { order, handleBasketShow } = useContext(ShopContext);
+
+    const quantity = order.length;
 
     return <div className="cart yellow lighten-2" onClick={handleBasketShow}>
         <i className="material-icons">shopping_cart</i>
@@ -7,4 +12,4 @@ function Cart(props) {
     </div>
 }
 
-export {Cart};
+export { Cart };

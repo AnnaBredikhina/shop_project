@@ -12,4 +12,4 @@ function Header() {
     </div>
 }
 
-export {Header}
+export { Header };
